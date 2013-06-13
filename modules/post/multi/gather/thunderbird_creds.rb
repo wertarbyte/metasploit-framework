@@ -162,7 +162,7 @@ class Metasploit3 < Msf::Post
 		# Load the database
 		db = SQLite3::Database.new(file)
 		begin
-			columns, *rows = db.execute('select * from moz_logins')
+			columns, *rows = db.execute2('select * from moz_logins')
 		rescue ::Exception => e
 			print_error("doh! #{e.to_s}")
 			return nil
